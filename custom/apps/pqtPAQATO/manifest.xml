@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>pqtPAQATO</name>
+        <label>PAQATO</label>
+        <label lang="de-DE">PAQATO</label>
+        <description>Personalized communication on the package journey</description>
+        <description lang="de-DE">Personalisierte Versand-Kommunikation für deinen Onlineshop</description>
+        <author>Sensus Media // NEWWORK DIGITAL GmbH</author>
+        <copyright>(c) NEWWORK DIGITAL GmbH</copyright>
+        <version>1.0.1</version>
+        <icon>Resources/config/plugin.png</icon>
+        <license>MIT</license>
+    </meta>
+
+    <admin>
+        <module name="mainModule"
+                source="https://shopware6.paqato.com/module/main"
+                parent="sw-settings"
+                position="50"
+        >
+            <label>Settings</label>
+            <label lang="de-DE">Einstellungen</label>
+        </module>
+
+        <!-- You can use the same url to open your module from the app store -->
+        <main-module source="https://shopware6.paqato.com/module/main"/>
+    </admin>
+
+    <setup>
+        <registrationUrl>https://shopware6.paqato.com/register</registrationUrl>
+    </setup>
+
+    <permissions>
+        <read>sales_channel</read>
+        <read>customer</read>
+        <read>customer_group</read>
+        <read>shipping_method</read>
+        <read>order</read>
+        <read>order_delivery</read>
+        <read>language</read>
+        <read>locale</read>
+        <read>country</read>
+        <read>order_line_item</read>
+        <read>product</read>
+        <read>currency</read>
+    </permissions>
+
+    <webhooks>
+        <webhook name="order-placed" url="https://shopware6.paqato.com/webhook/order-placed" event="checkout.order.placed"/>
+        <webhook name="order-written" event="order.written" url="https://shopware6.paqato.com/webhook/order-written"/>
+        <webhook name="order-deleted" event="order.deleted" url="https://shopware6.paqato.com/webhook/order-deleted"/>
+        <webhook name="order_address-written" event="order_address.written" url="https://shopware6.paqato.com/webhook/order_address-written"/>
+        <webhook name="order_address-deleted" event="order_address.deleted" url="https://shopware6.paqato.com/webhook/order_address-deleted"/>
+        <webhook name="state_enter-order_delivery-state-shipped" event="state_enter.order_delivery.state.shipped" url="https://shopware6.paqato.com/webhook/state_enter-order_delivery-state-shipped"/>
+        <webhook name="state_enter-order_delivery-state-shipped_partially" event="state_enter.order_delivery.state.shipped_partially" url="https://shopware6.paqato.com/webhook/state_enter-order_delivery-state-shipped_partially"/>
+
+        <webhook name="app-deleted" event="app.deleted" url="https://shopware6.paqato.com/app/deleted" />
+        <webhook name="app-uninstalled" event="app.uninstalled" url="https://shopware6.paqato.com/app/uninstalled"/>
+        <webhook name="app-activated" event="app.activated" url="https://shopware6.paqato.com/app/activated"/>
+        <webhook name="app-deactivated" event="app.deactivated" url="https://shopware6.paqato.com/app/deactivated"/>
+    </webhooks>
+
+</manifest>

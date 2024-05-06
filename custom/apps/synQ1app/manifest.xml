@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
+    <meta>
+        <name>synQ1app</name>
+        <label>synQup</label>
+        <label lang="de-DE">synQup</label>
+        <description>synQup is an iPaaS e-commerce data integration framework. The integration platform connects different applications from the broad IT system landscape (e.g. ERP, PIM, CRM, CMS, MAM/DAM).
+In doing so, synQup synchronizes the data streams of the different applications and data sources. Data and processes are digitalized, integrated, organized and automated, whereby synQup creates a uniform and clear database and enables efficient data exchange.
+synQup is 100% applicable to any organization, regardless of what systems and processes are in place. The use of industry-standard technology also gives synQup full flexibility and scalability. The data hub operates under the highest security standards and DSGVO requirements. In addition, comprehensive monitoring and intelligent health checks ensure trouble-free operation.</description>
+        <description lang="de-DE">synQup ist ein iPaaS E-Commerce Data Integration Framework. Die Integrationsplattform vernetzt unterschiedliche Anwendungen aus der breiten IT-Systemlandschaft (z.B. ERP, PIM, CRM, CMS, MAM/DAM).
+Dabei synchronisiert synQup die Datenströme der verschiedenen Applikationen und Datenquellen. Daten und Prozesse werden digitalisiert, integriert, organisiert und automatisiert, wodurch synQup eine einheitliche und übersichtliche Datenbasis erschafft und einen effizienten Datenaustausch ermöglicht.
+synQup lässt sich zu 100% auf jedes Unternehmen anwenden, unabhängig davon, welche Systeme und Prozesse vorhanden sind. Durch den Einsatz von Industriestandard-Technologie erhält synQup zudem volle Flexibilität und Skalierbarkeit. Die Datendrehscheibe arbeitet unter höchsten Sicherheitsstandards und DSGVO-Vorgaben. Zudem sorgen ein umfangreiches Monitoring und intelligente Health-Checks für einen störungsfreien Betrieb.</description>
+        <author>synQup GmbH</author>
+        <copyright>(c) synQup GmbH</copyright>
+        <version>1.0.0</version>
+        <icon>Resources/config/plugin.png</icon>
+        <license>MIT</license>
+    </meta>
+</manifest>

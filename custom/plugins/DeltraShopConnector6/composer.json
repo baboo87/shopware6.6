@@ -1,0 +1,42 @@
+{
+    "name": "deltra/shopconnector",
+    "description": "DeltraShopConnector",
+    "version": "v1.2.2",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "deltra Business Software GmbH & Co. KG",
+            "homepage": "https://deltra.com"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.6.*.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Deltra\\ShopConnector\\DeltraShopConnector6",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by deltra Business Software GmbH & Co. KG",
+        "label": {
+            "de-DE": "Deltra ShopConnector",
+            "en-GB": "Deltra ShopConnector"
+        },
+        "description": {
+            "de-DE": "Plugin zur Kommunikation zwischen orgaMAX und Shopware",
+            "en-GB": "Plugin for Communication between orgaMAX and Shopware"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://store.shopware.com/deltra-business-software.html",
+            "en-GB": "https://store.shopware.com/en/deltra-business-software.html"
+        },
+        "supportLink": {
+            "de-DE": "https://www.deltra.com/service/support-service/",
+            "en-GB": "https://www.deltra.com/service/support-service/"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Deltra\\ShopConnector\\": "src/"
+        }
+    }
+}

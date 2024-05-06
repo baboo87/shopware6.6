@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+        <input-field type="text">
+            <name>useragent</name>
+            <label>orgaMAX UserName</label>
+            <label lang="de-DE">orgaMAX Benutzername</label>
+            <placeholder>deltra</placeholder>
+            <helpText>Your Username shared with orgaMAX</helpText>
+            <helpText lang="de-DE">Ihr mit orgaMAX geteilter Benutzername</helpText>
+        </input-field>
+        <input-field type="password">
+            <name>password</name>
+            <label>orgaMAX Password</label>
+            <label lang="de-DE">orgaMAX Passwort</label>
+            <helpText>Password used for encryption</helpText>
+            <helpText lang="de-DE">Für Verschlüsselung verwendetes Passwort</helpText>
+        </input-field>
+        <input-field type="single-select">
+            <name>importstate</name>
+            <label>Orderstate for import</label>
+            <label lang="de-DE">Bestellstatus für den Import</label>
+            <helpText>Declare witch orders should be imported</helpText>
+            <helpText lang="de-DE">Bestimmen Sie den Bestellstatus der importiert werden soll</helpText>
+            <options>
+                <option>
+                    <id>open</id>
+                    <name>Open</name>
+                    <name lang="de-DE">Offen</name>
+                </option>
+                <option>
+                    <id>in_progress</id>
+                    <name>In Progress</name>
+                    <name lang="de-DE">In Bearbeitung</name>
+                </option>
+                <option>
+                    <id>completed</id>
+                    <name>Done</name>
+                    <name lang="de-DE">Abgeschlossen</name>
+                </option>
+            </options>
+        </input-field>
+        <input-field type="single-select">
+            <name>changestate</name>
+            <label>Orderstate after import</label>
+            <label lang="de-DE">Bestellstatus nach dem Import</label>
+            <helpText>Declare the order status after the import</helpText>
+            <helpText lang="de-DE">Bestimmen Sie den Bestellstatus nach dem Import</helpText>
+            <options>
+                <option>
+                    <id>open</id>
+                    <name>Open</name>
+                    <name lang="de-DE">Offen</name>
+                </option>
+                <option>
+                    <id>in_progress</id>
+                    <name>In Progress</name>
+                    <name lang="de-DE">In Bearbeitung</name>
+                </option>
+                <option>
+                    <id>completed</id>
+                    <name>Done</name>
+                    <name lang="de-DE">Abgeschlossen</name>
+                </option>
+            </options>
+        </input-field>
+    </card>
+    <card>
+        <title>Advanced Configuration</title>
+        <title lang="de-DE">Erweiterte Einstellungen</title>
+        <input-field type="bool">
+            <name>variants</name>
+            <label>Use Variants</label>
+            <label lang="de-DE">Varianten verwenden</label>
+            <helpText>Check if you want to take variants into account</helpText>
+            <helpText lang="de-DE">Legen Sie fest ob Varianten verwendet werden sollen</helpText>
+        </input-field>
+        <input-field type="int">
+            <name>batchsize</name>
+            <label>Size of Article Batch</label>
+            <label lang="de-DE">Anzahl der zu verarbeitenden Artikel</label>
+            <helpText>Set how many articles should be fetched at once. Zero means no Batching.</helpText>
+            <helpText lang="de-DE">Legen Sie fest wie viele Artikel auf einmal abgerufen werden sollen. Null bedeutet, kein Stapelabruf.</helpText>
+        </input-field>
+        <component name="sw-entity-multi-id-select">
+            <name>saleschannels</name>
+            <entity>sales_channel</entity>
+            <label>Sales Channels</label>
+            <label lang="de-DE">Verkaufskanäle</label>
+            <helpText>Set which SalesChannel you want to get orders from.</helpText>
+            <helpText lang="de-DE">Legen Sie fest von welchen Verkaufskanälen sie Bestellungen einlesen wollen.</helpText>
+        </component>
+    </card>
+</config>

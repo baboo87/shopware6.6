@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>xxx21LuigisBoxExtension</name>
+        <label>Luigi's Box</label>
+        <description>Luigi's Box is a unique technological set of tools that uses AI and machine learning to improve the performance of your website and increase your sales.</description>
+        <author>Luigi's Box</author>
+        <copyright>(c) by Luigi's Box</copyright>
+        <version>1.2.4</version>
+        <icon>Resources/config/logo.png</icon>
+        <license>Proprietary</license>
+    </meta>
+    <cookies>
+      <group>
+        <snippet-name>cookie.groupRequired</snippet-name>
+          <entries>
+            <cookie>
+              <cookie>_lb</cookie>
+              <snippet-name>Luigi's Box technical transient cookie holding temporary user identifier</snippet-name>
+            </cookie>
+            <cookie>
+              <cookie>lbx_consent_cookie</cookie>
+              <snippet-name>Luigi's Box technical cookie used to store cookie consent status</snippet-name>
+            </cookie>
+          </entries>
+      </group>
+      <group>
+        <snippet-name>Luigi's Box cookies</snippet-name>
+        <entries>
+          <cookie>
+            <cookie>_lb_id</cookie>
+            <snippet-name>Luigi's Box persistent cookie holding user identifier</snippet-name>
+            <expiration>395</expiration> 
+          </cookie>
+          <cookie>
+            <cookie>_lb_ccc</cookie>
+            <snippet-name>Luigi's Box cookie used to store consent granted status</snippet-name>
+            <expiration>395</expiration>
+          </cookie>
+        </entries>
+      </group>
+    </cookies>
+    <webhooks>
+    	<webhook name="app-activated" url="https://app.luigisbox.com/shopware/activation" event="app.activated"/>
+    	<webhook name="app-deactivated" url="https://app.luigisbox.com/shopware/deactivation" event="app.deactivated"/>
+    	<webhook name="app-deleted" url="https://app.luigisbox.com/shopware/uninstall" event="app.deleted"/>
+    	<webhook name="app-updated" url="https://app.luigisbox.com/shopware/update" event="app.updated"/>
+    </webhooks>
+    <setup>
+        <registrationUrl>https://app.luigisbox.com/shopware/registration</registrationUrl>
+    </setup>
+    <permissions>
+    	<read>category</read>
+    	<read>currency</read>
+    	<read>delivery_time</read>
+    	<read>language</read>
+        <read>locale</read>
+        <read>media</read>
+        <create>notification</create>
+        <read>product</read>
+        <read>product_manufacturer</read>
+        <read>product_media</read>
+        <read>product_price</read>
+        <read>product_stream</read>
+        <read>product_visibility</read>
+        <read>property_group</read>
+        <read>property_group_option</read>
+        <read>sales_channel</read>
+        <read>sales_channel_domain</read>
+        <read>sales_channel_type</read>
+        <read>seo_url</read>
+        <create>system_config</create>
+        <read>system_config</read>
+        <delete>system_config</delete>
+        <read>tag</read>
+        <read>unit</read>
+    </permissions>
+    <admin>
+    	<module name="LuigisSignIn"
+                source="https://app.luigisbox.com/shopware/iframe"
+                parent="sw-extension"
+        >
+            <label>Sign In to Luigi’s Box</label>
+        </module>
+        <main-module source="https://app.luigisbox.com/shopware/iframe"/>
+    </admin>
+</manifest>

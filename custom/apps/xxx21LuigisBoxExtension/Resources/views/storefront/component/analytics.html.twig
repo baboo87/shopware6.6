@@ -1,0 +1,43 @@
+{% sw_extends '@Storefront/storefront/component/analytics.html.twig' %}
+
+{% block component_head_analytics %}
+	{{ parent() }}
+
+	<script>var ruleIds = {{(context.getRuleIds|json_encode|raw)}}</script>
+	<script>var displayNet = !{{(context.getCurrentCustomerGroup.getDisplayGross|json_encode)}}</script>
+
+	{% set LB_script_name = "LuigisBox.config.#{(context.getLanguageId)}" %}
+	<script async src="{{ config(LB_script_name) }}"></script>
+
+	<script>
+	  function eventCallback(updatedCookies) {
+    	    if (typeof updatedCookies.detail['_lb_id'] !== 'undefined' && typeof updatedCookies.detail['_lb_ccc'] !== 'undefined') {
+              // The cookie with the cookie attribute "_lb_id" and "_lb_ccc" either is set active or from active to inactive
+              let iDCookieActive = updatedCookies.detail['_lb_id'];
+              let consentCookieActive = updatedCookies.detail['_lb_ccc'];
+              if (iDCookieActive && consentCookieActive) {
+                document.cookie = "lbx_consent_cookie=true";
+              } else {
+                document.cookie = "lbx_consent_cookie=false";
+              }
+            } else if (typeof updatedCookies.detail['_lb_id'] !== 'undefined') {
+              // The cookie with the cookie attribute "_lb_id" was updated but "_lb_ccc" was not
+              let iDCookieActive = updatedCookies.detail['_lb_id'];
+              if (!iDCookieActive) {
+                document.cookie = "lbx_consent_cookie=false";
+              }
+            }
+	  }
+
+          function registerCallback(){
+	    if(!document.$emitter){
+	      setTimeout(registerCallback, 200);
+	      return;
+	    }
+	    
+	    document.$emitter.subscribe('CookieConfiguration_Update', eventCallback);
+          }
+
+          registerCallback();
+      </script>
+{% endblock %}
